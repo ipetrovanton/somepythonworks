@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+
+    <head>
+        {% if title %}
+        <title>{{ title }} - Мой сайт</title>
+        {% else %}
+        <title>Добро пожаловать на мой сайт</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Привет, {{ user.username }}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username }} сказал: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+    </body>
+</html>
